@@ -1,0 +1,71 @@
+title: "Robin Dosan | Bioinformatics Portfolio"
+url: "https://robind1.github.io"
+baseurl: ""
+repository: "robind1/githubio_bioinfor_portfol"
+
+locale: "en-US"
+timezone: "UTC"
+search: true
+teaser: "/assets/images/portfol-1.svg"
+minimal_mistakes_skin: "default"
+
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+include:
+  - _pages
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: false
+      related: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+author:
+  name: "Robin Dosan"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/robind1"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/robin-dosan"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/robind1"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=qUn3spEAAAAJ&hl=en"
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
