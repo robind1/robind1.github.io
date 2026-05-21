@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const focusAreas = [
+  {
+    title: 'Genomics',
+    body: 'Resistance, typing analysis for bacterial and viral pathogens. High-troughput sequencing analysis.',
+  },
+  {
+    title: 'Reproducible workflows',
+    body: 'Nextflow/Snakemake pipeline, containerization, and HPC/cloud deployment.',
+  },
+  {
+    title: 'Clinical interoperability',
+    body: 'Converting findings into standardized HL7 FHIR resources for EHRs integration.',
+  },
+];
+
+const tools = [
+  'Nextflow',
+  'Python',
+  'R',
+  'Bash',
+  'Git',
+  'BigQuery',
+  'Cloud',
+  'Docker',
+  'TensorFlow',
+  'OAuth 2.0',
+  'HL7 FHIR',
+  'Nanopore (ONT)',
+  'Illumina',
+  'Genomics',
+];
+---
+
+<BaseLayout
+  title="About — Robin Dosan"
+  description="Bioinformatician focused on genomics, reproducible workflows, and interoperable FHIR Genomics reporting."
+>
+  <section class="mx-auto max-w-3xl px-6 pt-24 pb-16 sm:px-8 sm:pt-32">
+    <p class="text-[13px] font-medium uppercase tracking-[0.18em] text-faint">
+      About
+    </p>
+    <div class="prose mt-10">
+      <p>
+        I am focused on human and pathogen genomics, algorithm design, reproducible workflows, 
+        and interoperability. My work mainly combines sequencing analysis with 
+        standardized Fast Healthcare Interoperability Resources (FHIR) that turn genomic findings into
+        practical outputs for clinical interpretation, surveillance, and downstream
+        integration in health systems.
+      </p>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-12 sm:px-8">
+    <h2 class="text-[13px] font-medium uppercase tracking-[0.18em] text-faint">
+      Focus areas
+    </h2>
+    <div class="mt-6 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
+      {
+        focusAreas.map((area) => (
+          <div class="bg-paper p-6">
+            <h3 class="text-[15px] font-semibold tracking-tight text-ink">
+              {area.title}
+            </h3>
+            <p class="mt-2 text-[14px] leading-relaxed text-muted">
+              {area.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-12 pb-24 sm:px-8">
+    <h2 class="text-[13px] font-medium uppercase tracking-[0.18em] text-faint">
+      Tools &amp; methods
+    </h2>
+    <ul class="mt-6 flex flex-wrap gap-2.5">
+      {
+        tools.map((tool) => (
+          <li class="rounded-full border border-line px-3.5 py-1.5 text-[13px] text-muted">
+            {tool}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, excerpt, tags, date } = project.data;
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+});
+---
+
+<BaseLayout title={`${title} — Robin Dosan`} description={excerpt}>
+  <article class="mx-auto max-w-3xl px-6 py-16 sm:px-8 sm:py-24">
+    <a
+      href="/#work"
+      class="inline-flex items-center gap-2 text-[14px] text-muted transition-colors hover:text-ink"
+    >
+      <span aria-hidden="true">←</span> Back to work
+    </a>
+
+    <header class="mt-10 border-b border-line pb-10">
+      <p class="text-[13px] uppercase tracking-[0.18em] text-faint">
+        {formattedDate}
+      </p>
+      <h1
+        class="mt-4 text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.6rem]"
+      >
+        {title}
+      </h1>
+      <p class="mt-5 text-[17px] leading-relaxed text-muted">{excerpt}</p>
+      <ul class="mt-6 flex flex-wrap gap-2">
+        {
+          tags.map((tag) => (
+            <li class="rounded-full border border-line px-2.5 py-0.5 text-[12px] text-muted">
+              {tag}
+            </li>
+          ))
+        }
+      </ul>
+    </header>
+
+    <div class="prose mt-12">
+      <slot />
+    </div>
+
+    <div class="mt-16 border-t border-line pt-8">
+      <a
+        href="/#work"
+        class="text-[14px] text-muted transition-colors hover:text-ink"
+      >
+        ← All projects
+      </a>
+    </div>
+  </article>
+</BaseLayout>
