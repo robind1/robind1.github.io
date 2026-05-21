@@ -1,7 +1,6 @@
 # Bioinformatics Portfolio
 
-Personal portfolio of Robin Dosan — pathogen genomics, reproducible Nextflow
-workflows, and interoperable HL7 FHIR Genomics reporting.
+Personal portfolio of Robin Dosan.
 
 Built with [Astro](https://astro.build/) and Tailwind CSS, deployed to GitHub
 Pages at <https://robind1.github.io/>.
