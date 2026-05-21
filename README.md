@@ -60,14 +60,3 @@ astro.config.mjs           site URL, integrations
 
 3. Put figures in `public/images/` and reference them in the body with a
    root-absolute path, e.g. `![Alt text](/images/my-project.png)`.
-
-## Deployment
-
-This repository is a GitHub Pages **user site** — it must be named
-`robind1.github.io` and the site is served from the domain root.
-
-Pushes to `main` are built and published automatically by the GitHub Actions
-workflow in `.github/workflows/deploy.yml`.
-
-**One-time setup:** in the GitHub repository, go to **Settings → Pages** and set
-**Build and deployment → Source** to **GitHub Actions**.
